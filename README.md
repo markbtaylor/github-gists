@@ -6,6 +6,9 @@ On the initial run the script will cache the datetime the script was run at. On 
 datetime will be used to show only the gists created after the last run. If you want to reset this cached value 
 then pass the `--reset` flag to the script.
 
+Depending on how you want to consume the result, you can choose to set the output format by passing the `--format` flag 
+with either `json` or `tabular`, with the default being json. 
+
 # Build the script
 
 Dependencies: Docker
@@ -33,3 +36,7 @@ Queries the Github API one Gist at a time, collating the results.
 Resets the previous cached since time.
 
 `docker run -it --rm -v $(pwd)/data:/app/data gist-demo bin/console get-user-gists markbtaylor --reset`
+
+Output as a table to the console, as opposed to JSON.
+
+`docker run -it --rm -v $(pwd)/data:/app/data gist-demo bin/console get-user-gists markbtaylor --format=tabular`

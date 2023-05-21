@@ -83,7 +83,7 @@ class GistRepository
             $this->fetchAllForUser($username, $responses);
         }
 
-        return $responses;
+        return array_shift($responses);
     }
 
     /**
